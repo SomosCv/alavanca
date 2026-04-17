@@ -20,7 +20,6 @@
             position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
             transform: translate(-50%, -50%); object-fit: cover; z-index: -2;
         }
-        /* Fallback image overlay when video fails */
         .video-fallback {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('alavanca-poster.jpg') center/cover no-repeat; z-index: -3;
@@ -188,9 +187,25 @@
             padding-top: 20px; border-top: 1px solid var(--card-border);
         }
         
+        /* Card thumbnail image */
+        .card-thumbnail {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin: 12px 0 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .card-thumbnail:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+        
         /* Card buttons */
         .card-btn {
-            margin-top: 16px; padding: 10px 16px; background: rgba(204, 43, 43, 0.25);
+            margin-top: 8px; padding: 10px 16px; background: rgba(204, 43, 43, 0.25);
             border: 1px solid var(--accent); border-radius: 40px; color: var(--text-primary);
             font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -255,7 +270,6 @@
     <!-- Video Background with fallback image -->
     <video class="video-background" autoplay loop muted playsinline poster="alavanca-poster.jpg">
         <source src="alavanca.mp4" type="video/mp4">
-        <!-- Fallback image if video fails -->
     </video>
     <div class="video-fallback"></div>
 
@@ -283,34 +297,45 @@
         <div class="subhead" style="display: block; text-align: center;">One‑Tap Device Discovery · AI Chat Translation · Automated NOI Tracking</div>
         <div class="stat-badge"><i class="fas fa-microchip"></i> Connect your existing cameras, meters, and sensors — no custom dev required.</div>
         <div class="grid-2col" style="margin-top: 20px;">
+            <!-- Card 1 -->
             <div class="info-card">
                 <h3><i class="fas fa-wifi"></i> Universal IoT Onboarding</h3>
+                <img src="1.png" alt="IoT Device Discovery Screen" class="card-thumbnail" data-image="1.png" data-caption="IoT Device Discovery Screen">
                 <p>Matter, Zigbee, ONVIF, MQTT auto‑discovery. Scan a QR code or press "Add Device" — done.</p>
-                <!-- Renamed to 1.png -->
                 <button class="card-btn" data-image="1.png" data-caption="IoT Device Discovery Screen"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 2 -->
             <div class="info-card">
                 <h3><i class="fas fa-language"></i> 42 Languages + AI Translation</h3>
+                <img src="2.png" alt="In-Chat Translation Example" class="card-thumbnail" data-image="2.png" data-caption="In-Chat Translation Example">
                 <p>Tenants, owners, and handymen communicate in their native language. In‑chat translations built in.</p>
                 <button class="card-btn" data-image="2.png" data-caption="In-Chat Translation Example"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 3 -->
             <div class="info-card">
                 <h3><i class="fas fa-chart-line"></i> NOI & Appraisal Tracker</h3>
+                <img src="3.png" alt="NOI Dashboard" class="card-thumbnail" data-image="3.png" data-caption="NOI Dashboard">
                 <p>Utility savings, maintenance logs, and rent collection automatically flow into financial reports.</p>
                 <button class="card-btn" data-image="3.png" data-caption="NOI Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 4 -->
             <div class="info-card">
                 <h3><i class="fas fa-paint-brush"></i> White‑Label & Multi‑PWA</h3>
+                <img src="4.png" alt="White-Labeled Tenant Portal" class="card-thumbnail" data-image="4.png" data-caption="White-Labeled Tenant Portal">
                 <p>Your brand, your domain. Each property gets its own installable PWA subdomain.</p>
                 <button class="card-btn" data-image="4.png" data-caption="White-Labeled Tenant Portal"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 5 -->
             <div class="info-card">
                 <h3><i class="fas fa-video"></i> Live Camera Streaming</h3>
+                <img src="5.png" alt="Camera Live View" class="card-thumbnail" data-image="5.png" data-caption="Camera Live View">
                 <p>ONVIF/RTSP feeds with motion alerts, offline detection, and WebRTC low‑latency playback.</p>
                 <button class="card-btn" data-image="5.png" data-caption="Camera Live View"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 6 -->
             <div class="info-card">
                 <h3><i class="fas fa-tachometer-alt"></i> Utility Dashboards</h3>
+                <img src="6.png" alt="Utility Monitoring Dashboard" class="card-thumbnail" data-image="6.png" data-caption="Utility Monitoring Dashboard">
                 <p>Real‑time water/electric usage, anomaly alerts, and cost attribution per unit.</p>
                 <button class="card-btn" data-image="6.png" data-caption="Utility Monitoring Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
@@ -332,6 +357,7 @@
         <div class="grid-2col">
             <div class="info-card">
                 <h3><i class="fas fa-cubes"></i> Core Management</h3>
+                <img src="7.png" alt="Tenant Portal Dashboard" class="card-thumbnail" data-image="7.png" data-caption="Tenant Portal Dashboard">
                 <ul class="list-styled">
                     <li><i class="fas fa-users"></i> Tenant, handyman, owner portals</li>
                     <li><i class="fas fa-file-invoice"></i> Lease & document storage</li>
@@ -342,6 +368,7 @@
             </div>
             <div class="info-card">
                 <h3><i class="fas fa-microchip"></i> Self‑Service IoT</h3>
+                <img src="8.png" alt="Device Pairing Wizard" class="card-thumbnail" data-image="8.png" data-caption="Device Pairing Wizard">
                 <ul class="list-styled">
                     <li><i class="fas fa-qrcode"></i> QR‑based Matter/Zigbee pairing</li>
                     <li><i class="fas fa-network-wired"></i> ONVIF camera auto‑discovery</li>
@@ -352,16 +379,18 @@
             </div>
             <div class="info-card">
                 <h3><i class="fas fa-globe"></i> Multilingual & AI</h3>
+                <img src="9.png" alt="Language Selection Screen" class="card-thumbnail" data-image="9.png" data-caption="Language Selection Screen">
                 <ul class="list-styled">
                     <li><i class="fas fa-language"></i> 42‑language interface</li>
                     <li><i class="fas fa-robot"></i> In‑chat AI translation</li>
                     <li><i class="fas fa-comment-dots"></i> Universal notification engine</li>
                     <li><i class="fas fa-shield-alt"></i> Role‑based access control</li>
                 </ul>
-                <button class="card-btn" data-image="2.png" data-caption="Language Selection Screen"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="9.png" data-caption="Language Selection Screen"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="info-card">
                 <h3><i class="fas fa-cloud-upload-alt"></i> Infrastructure</h3>
+                <img src="10.png" alt="System Health Dashboard" class="card-thumbnail" data-image="10.png" data-caption="System Health Dashboard">
                 <ul class="list-styled">
                     <li><i class="fas fa-server"></i> AWS auto‑scaling, CI/CD</li>
                     <li><i class="fas fa-database"></i> Automated backups</li>
@@ -376,11 +405,13 @@
         <div class="grid-2col">
             <div class="info-card">
                 <h3><i class="far fa-calendar-alt"></i> Week 1–2</h3>
+                <img src="11.png" alt="Onboarding Checklist" class="card-thumbnail" data-image="11.png" data-caption="Onboarding Checklist">
                 <ul><li>Tenant & unit onboarding</li><li>Payment gateway setup</li></ul>
                 <button class="card-btn" data-image="11.png" data-caption="Onboarding Checklist"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="info-card">
                 <h3><i class="far fa-calendar-alt"></i> Week 3–4</h3>
+                <img src="12.png" alt="Branding Customization" class="card-thumbnail" data-image="12.png" data-caption="Branding Customization">
                 <ul><li>IoT device pairing (self‑guided)</li><li>Custom branding & domain</li></ul>
                 <button class="card-btn" data-image="12.png" data-caption="Branding Customization"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
@@ -393,12 +424,14 @@
                 <div class="price">$15–$35</div>
                 <p>per unit / month</p>
                 <span>Billed annually (or monthly +10%)</span>
+                <img src="13.png" alt="Pricing Calculator" class="card-thumbnail" style="margin-top:16px;" data-image="13.png" data-caption="Pricing Calculator">
                 <button class="card-btn" data-image="13.png" data-caption="Pricing Calculator"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="pricing-box">
                 <div class="price">9‑unit example</div>
                 <p>$135–$315 / month</p>
                 <span>All features included · No hardware markup</span>
+                <img src="14.png" alt="9-Unit Portfolio ROI" class="card-thumbnail" style="margin-top:16px;" data-image="14.png" data-caption="9-Unit Portfolio ROI">
                 <button class="card-btn" data-image="14.png" data-caption="9-Unit Portfolio ROI"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
@@ -408,11 +441,13 @@
         <div class="grid-2col">
             <div class="info-card">
                 <h3><i class="fas fa-chart-pie"></i> NOI Growth</h3>
+                <img src="15.png" alt="NOI Projection" class="card-thumbnail" data-image="15.png" data-caption="NOI Projection">
                 <ul><li>Documented savings flow directly to tax returns</li><li>Higher NOI → increased appraisal value</li></ul>
                 <button class="card-btn" data-image="15.png" data-caption="NOI Projection"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="info-card">
                 <h3><i class="fas fa-headset"></i> Support & Updates</h3>
+                <img src="16.png" alt="Support Ticket Interface" class="card-thumbnail" data-image="16.png" data-caption="Support Ticket Interface">
                 <ul><li>Email/SMS support included</li><li>Continuous feature deployment</li><li>No per‑update fees</li></ul>
                 <button class="card-btn" data-image="16.png" data-caption="Support Ticket Interface"><i class="fas fa-image"></i> View Screenshot</button>
             </div>
@@ -480,12 +515,25 @@
                 modalImg.src = '';
             }
 
+            // Attach click listeners to both card-btn and thumbnail images
+            function handleImageTrigger(element) {
+                const imageUrl = element.getAttribute('data-image');
+                const caption = element.getAttribute('data-caption');
+                if (imageUrl) openImageModal(imageUrl, caption);
+            }
+
             document.querySelectorAll('.card-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const imageUrl = btn.getAttribute('data-image');
-                    const caption = btn.getAttribute('data-caption');
-                    openImageModal(imageUrl, caption);
+                    handleImageTrigger(btn);
+                });
+            });
+
+            // Make thumbnails clickable too
+            document.querySelectorAll('.card-thumbnail').forEach(img => {
+                img.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleImageTrigger(img);
                 });
             });
 
