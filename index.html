@@ -222,25 +222,34 @@
         }
         .image-modal-overlay.active { opacity: 1; visibility: visible; }
         .image-modal-content {
-            max-width: 90vw; max-height: 90vh; background: var(--modal-bg);
-            border-radius: 32px; border: 1px solid var(--accent); padding: 20px;
+            max-width: 90vw; max-height: 90vh; width: 800px;
+            background: var(--modal-bg);
+            border-radius: 32px; border: 1px solid var(--accent); padding: 24px;
             box-shadow: 0 30px 40px rgba(0, 0, 0, 0.7); position: relative;
-            animation: zoomIn 0.3s;
+            animation: zoomIn 0.3s; display: flex; flex-direction: column;
+            overflow-y: auto;
         }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         .image-modal-content img {
-            max-width: 100%; max-height: 80vh; display: block; border-radius: 16px;
+            max-width: 100%; max-height: 60vh; display: block; border-radius: 16px;
+            margin-bottom: 16px; border: 1px solid var(--card-border);
         }
         .image-modal-close {
             position: absolute; top: 16px; right: 16px; background: var(--accent);
             color: white; border: none; width: 40px; height: 40px; border-radius: 40px;
             font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: 0.2s;
+            transition: 0.2s; z-index: 10;
         }
         .image-modal-close:hover { background: var(--button-hover); transform: rotate(90deg); }
         .image-modal-caption {
-            margin-top: 12px; color: var(--text-primary); text-align: center; font-weight: 500;
+            font-size: 1.6rem; font-weight: 700; color: var(--accent); margin-bottom: 16px;
+            text-align: left; border-bottom: 2px solid var(--accent); padding-bottom: 8px;
         }
+        .image-modal-description {
+            color: var(--text-primary); font-size: 1rem; line-height: 1.7;
+            text-align: left; padding: 4px 0; white-space: pre-line;
+        }
+        .image-modal-description p { margin-bottom: 16px; }
         
         .accessibility-widget {
             position: fixed; bottom: 24px; right: 24px; display: flex; gap: 12px;
@@ -300,44 +309,44 @@
             <!-- Card 1 -->
             <div class="info-card">
                 <h3><i class="fas fa-wifi"></i> Universal IoT Onboarding</h3>
-                <img src="1.png" alt="IoT Device Discovery Screen" class="card-thumbnail" data-image="1.png" data-caption="IoT Device Discovery Screen">
+                <img src="1.png" alt="IoT Device Discovery Screen" class="card-thumbnail" data-image="1.png" data-caption="IoT Device Discovery" data-description="Alavanca's universal onboarding engine eliminates the complexity of adding smart devices to your property portfolio. Supporting Matter, Zigbee, ONVIF, MQTT, and Modbus protocols out of the box, the system automatically scans your local network for compatible devices—cameras, smart locks, water leak sensors, thermostats, and energy monitors. No custom coding, no proprietary bridges, and no vendor lock-in. Simply open the 'Add Device' wizard, scan a QR code if provided, or let the platform discover devices via mDNS/SSDP. Within 60 seconds, the device is paired, configured, and ready for use. The platform also maintains a device registry with health checks, firmware update reminders, and offline alerts. For larger portfolios, bulk onboarding templates allow you to pre-configure device settings (e.g., camera retention policies, alert thresholds) and apply them across multiple units. This self-service approach reduces on-site IT visits and empowers tenants or property managers to handle basic IoT setup themselves, cutting deployment costs by up to 70% compared to traditional building automation systems.">
                 <p>Matter, Zigbee, ONVIF, MQTT auto‑discovery. Scan a QR code or press "Add Device" — done.</p>
-                <button class="card-btn" data-image="1.png" data-caption="IoT Device Discovery Screen"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="1.png" data-caption="IoT Device Discovery" data-description="Alavanca's universal onboarding engine eliminates the complexity of adding smart devices to your property portfolio. Supporting Matter, Zigbee, ONVIF, MQTT, and Modbus protocols out of the box, the system automatically scans your local network for compatible devices—cameras, smart locks, water leak sensors, thermostats, and energy monitors. No custom coding, no proprietary bridges, and no vendor lock-in. Simply open the 'Add Device' wizard, scan a QR code if provided, or let the platform discover devices via mDNS/SSDP. Within 60 seconds, the device is paired, configured, and ready for use. The platform also maintains a device registry with health checks, firmware update reminders, and offline alerts. For larger portfolios, bulk onboarding templates allow you to pre-configure device settings (e.g., camera retention policies, alert thresholds) and apply them across multiple units. This self-service approach reduces on-site IT visits and empowers tenants or property managers to handle basic IoT setup themselves, cutting deployment costs by up to 70% compared to traditional building automation systems."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <!-- Card 2 -->
             <div class="info-card">
                 <h3><i class="fas fa-language"></i> 42 Languages + AI Translation</h3>
-                <img src="2.png" alt="In-Chat Translation Example" class="card-thumbnail" data-image="2.png" data-caption="In-Chat Translation Example">
+                <img src="2.png" alt="In-Chat Translation Example" class="card-thumbnail" data-image="2.png" data-caption="AI Translation & Multilingual" data-description="In today's global rental market, language barriers create friction—misunderstood maintenance requests, delayed payments, and frustrated tenants. Alavanca solves this with a fully localized interface in 42 languages and real-time AI chat translation. Every user, whether tenant, owner, or handyman, experiences the platform in their native tongue. When a Spanish-speaking tenant messages about a leaky faucet, an English-speaking property manager sees the translated text instantly, preserving context and technical terms. The AI translation model is fine-tuned on property management vocabulary (e.g., 'water heater', 'circuit breaker', 'security deposit') to ensure accuracy. Beyond chat, all system notifications—rent reminders, maintenance updates, alert messages—are automatically sent in the user's chosen language. The translation engine runs on secure, private infrastructure; no chat data is stored for training external models. This feature has been shown to reduce response times by 40% and increase tenant satisfaction scores dramatically, especially in diverse urban properties.">
                 <p>Tenants, owners, and handymen communicate in their native language. In‑chat translations built in.</p>
-                <button class="card-btn" data-image="2.png" data-caption="In-Chat Translation Example"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="2.png" data-caption="AI Translation & Multilingual" data-description="In today's global rental market, language barriers create friction—misunderstood maintenance requests, delayed payments, and frustrated tenants. Alavanca solves this with a fully localized interface in 42 languages and real-time AI chat translation. Every user, whether tenant, owner, or handyman, experiences the platform in their native tongue. When a Spanish-speaking tenant messages about a leaky faucet, an English-speaking property manager sees the translated text instantly, preserving context and technical terms. The AI translation model is fine-tuned on property management vocabulary (e.g., 'water heater', 'circuit breaker', 'security deposit') to ensure accuracy. Beyond chat, all system notifications—rent reminders, maintenance updates, alert messages—are automatically sent in the user's chosen language. The translation engine runs on secure, private infrastructure; no chat data is stored for training external models. This feature has been shown to reduce response times by 40% and increase tenant satisfaction scores dramatically, especially in diverse urban properties."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <!-- Card 3 -->
             <div class="info-card">
                 <h3><i class="fas fa-chart-line"></i> NOI & Appraisal Tracker</h3>
-                <img src="3.png" alt="NOI Dashboard" class="card-thumbnail" data-image="3.png" data-caption="NOI Dashboard">
+                <img src="3.png" alt="NOI Dashboard" class="card-thumbnail" data-image="3.png" data-caption="NOI & Appraisal" data-description="Net Operating Income (NOI) is the lifeblood of property valuation, yet most owners rely on spreadsheets and annual tax filings to track it. Alavanca automates NOI calculation in real time by aggregating data from rent collection, utility monitoring, and maintenance logs. Every time a tenant pays rent via Stripe/Plaid, the income is recorded. Every utility anomaly detected by smart meters—a running toilet or inefficient HVAC—is logged as a potential savings event. Maintenance expenses are categorized and deducted automatically. The result is a live NOI dashboard that shows monthly, quarterly, and yearly trends. More importantly, the system generates auditable reports suitable for appraisers, lenders, and tax professionals. Documented operational savings (e.g., 12% reduction in water usage year-over-year) directly support higher property valuations. Alavanca's NOI tracker has been used by owners to justify 5–15% increases in appraisal value during refinancing or sale, because it provides verifiable, granular proof of efficient management.">
                 <p>Utility savings, maintenance logs, and rent collection automatically flow into financial reports.</p>
-                <button class="card-btn" data-image="3.png" data-caption="NOI Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="3.png" data-caption="NOI & Appraisal" data-description="Net Operating Income (NOI) is the lifeblood of property valuation, yet most owners rely on spreadsheets and annual tax filings to track it. Alavanca automates NOI calculation in real time by aggregating data from rent collection, utility monitoring, and maintenance logs. Every time a tenant pays rent via Stripe/Plaid, the income is recorded. Every utility anomaly detected by smart meters—a running toilet or inefficient HVAC—is logged as a potential savings event. Maintenance expenses are categorized and deducted automatically. The result is a live NOI dashboard that shows monthly, quarterly, and yearly trends. More importantly, the system generates auditable reports suitable for appraisers, lenders, and tax professionals. Documented operational savings (e.g., 12% reduction in water usage year-over-year) directly support higher property valuations. Alavanca's NOI tracker has been used by owners to justify 5–15% increases in appraisal value during refinancing or sale, because it provides verifiable, granular proof of efficient management."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <!-- Card 4 -->
             <div class="info-card">
                 <h3><i class="fas fa-paint-brush"></i> White‑Label & Multi‑PWA</h3>
-                <img src="4.png" alt="White-Labeled Tenant Portal" class="card-thumbnail" data-image="4.png" data-caption="White-Labeled Tenant Portal">
+                <img src="4.png" alt="White-Labeled Tenant Portal" class="card-thumbnail" data-image="4.png" data-caption="White-Label & PWA" data-description="Your brand matters. Alavanca's white-label solution lets you replace all platform branding with your own logo, color palette, and custom domain (e.g., portal.yourproperty.com). Each property within your portfolio can have a dedicated subdomain and its own Progressive Web App (PWA)—an installable, app-like experience that works offline and doesn't require App Store approval. Tenants can 'Add to Home Screen' on iOS or Android and receive push notifications just like a native app. The white-label package includes customizable email templates, SMS sender IDs, and even tenant-facing lease agreements that reflect your legal entity. For property management companies, this means a cohesive brand experience across dozens of buildings without the cost of developing custom software. Setup takes less than a week and includes SSL certificates and ongoing maintenance.">
                 <p>Your brand, your domain. Each property gets its own installable PWA subdomain.</p>
-                <button class="card-btn" data-image="4.png" data-caption="White-Labeled Tenant Portal"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="4.png" data-caption="White-Label & PWA" data-description="Your brand matters. Alavanca's white-label solution lets you replace all platform branding with your own logo, color palette, and custom domain (e.g., portal.yourproperty.com). Each property within your portfolio can have a dedicated subdomain and its own Progressive Web App (PWA)—an installable, app-like experience that works offline and doesn't require App Store approval. Tenants can 'Add to Home Screen' on iOS or Android and receive push notifications just like a native app. The white-label package includes customizable email templates, SMS sender IDs, and even tenant-facing lease agreements that reflect your legal entity. For property management companies, this means a cohesive brand experience across dozens of buildings without the cost of developing custom software. Setup takes less than a week and includes SSL certificates and ongoing maintenance."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <!-- Card 5 -->
             <div class="info-card">
                 <h3><i class="fas fa-video"></i> Live Camera Streaming</h3>
-                <img src="5.png" alt="Camera Live View" class="card-thumbnail" data-image="5.png" data-caption="Camera Live View">
+                <img src="5.png" alt="Camera Live View" class="card-thumbnail" data-image="5.png" data-caption="Live Camera Streaming" data-description="Security camera integration is a cornerstone of modern property management, and Alavanca supports ONVIF Profile S/T and RTSP streams from virtually any IP camera or NVR. Using WebRTC for sub-500ms latency, live feeds appear instantly in the browser or mobile device. Motion detection alerts are configurable per camera with sensitivity zones, and the system can trigger automated actions—turn on lights, send a notification, or record a clip. Camera health monitoring alerts you if a feed goes offline. All streams are encrypted with TLS and can be restricted by user role (e.g., tenants only see common areas, managers see all). Recordings are stored locally on your existing NVR or optionally in Alavanca's cloud (with configurable retention). No per-camera subscription fees—just your existing hardware and the Alavanca platform.">
                 <p>ONVIF/RTSP feeds with motion alerts, offline detection, and WebRTC low‑latency playback.</p>
-                <button class="card-btn" data-image="5.png" data-caption="Camera Live View"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="5.png" data-caption="Live Camera Streaming" data-description="Security camera integration is a cornerstone of modern property management, and Alavanca supports ONVIF Profile S/T and RTSP streams from virtually any IP camera or NVR. Using WebRTC for sub-500ms latency, live feeds appear instantly in the browser or mobile device. Motion detection alerts are configurable per camera with sensitivity zones, and the system can trigger automated actions—turn on lights, send a notification, or record a clip. Camera health monitoring alerts you if a feed goes offline. All streams are encrypted with TLS and can be restricted by user role (e.g., tenants only see common areas, managers see all). Recordings are stored locally on your existing NVR or optionally in Alavanca's cloud (with configurable retention). No per-camera subscription fees—just your existing hardware and the Alavanca platform."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <!-- Card 6 -->
             <div class="info-card">
                 <h3><i class="fas fa-tachometer-alt"></i> Utility Dashboards</h3>
-                <img src="6.png" alt="Utility Monitoring Dashboard" class="card-thumbnail" data-image="6.png" data-caption="Utility Monitoring Dashboard">
+                <img src="6.png" alt="Utility Monitoring Dashboard" class="card-thumbnail" data-image="6.png" data-caption="Utility Monitoring" data-description="Water leaks, inefficient HVAC, and phantom electrical loads drain NOI. Alavanca's utility dashboards provide real-time and historical usage data for water, electricity, and gas—per unit or common area. The platform integrates with Modbus meters, pulse counters, and major smart meter brands via MQTT or local API. Anomaly detection algorithms compare current usage against historical patterns and send alerts for abnormal consumption (e.g., continuous water flow indicating a leak). This proactive monitoring can prevent thousands in damage and lost revenue. For properties with submetering, the dashboard automatically attributes costs to each unit, simplifying RUBS billing or tenant chargebacks. Visualizations include 24-hour load profiles, weekly comparisons, and year-over-year efficiency metrics. Owners using Alavanca's utility module report average water savings of 15–25% and electrical savings of 8–12% within the first six months.">
                 <p>Real‑time water/electric usage, anomaly alerts, and cost attribution per unit.</p>
-                <button class="card-btn" data-image="6.png" data-caption="Utility Monitoring Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="6.png" data-caption="Utility Monitoring" data-description="Water leaks, inefficient HVAC, and phantom electrical loads drain NOI. Alavanca's utility dashboards provide real-time and historical usage data for water, electricity, and gas—per unit or common area. The platform integrates with Modbus meters, pulse counters, and major smart meter brands via MQTT or local API. Anomaly detection algorithms compare current usage against historical patterns and send alerts for abnormal consumption (e.g., continuous water flow indicating a leak). This proactive monitoring can prevent thousands in damage and lost revenue. For properties with submetering, the dashboard automatically attributes costs to each unit, simplifying RUBS billing or tenant chargebacks. Visualizations include 24-hour load profiles, weekly comparisons, and year-over-year efficiency metrics. Owners using Alavanca's utility module report average water savings of 15–25% and electrical savings of 8–12% within the first six months."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
         <div class="highlight-text"><i class="fas fa-rocket"></i> Average setup time: under 5 minutes. No proprietary hardware required.</div>
@@ -355,49 +364,53 @@
         
         <div class="section-title">📋 Platform Capabilities</div>
         <div class="grid-2col">
+            <!-- Card 7 -->
             <div class="info-card">
                 <h3><i class="fas fa-cubes"></i> Core Management</h3>
-                <img src="7.png" alt="Tenant Portal Dashboard" class="card-thumbnail" data-image="7.png" data-caption="Tenant Portal Dashboard">
+                <img src="7.png" alt="Tenant Portal Dashboard" class="card-thumbnail" data-image="7.png" data-caption="Core Management Suite" data-description="Alavanca's core management suite replaces multiple disjointed tools with a unified platform. Tenant portals provide lease viewing, online rent payment (Stripe/Plaid), and maintenance request submission with photo/video attachments. Owners see a consolidated financial dashboard with rent roll, upcoming vacancies, and expense tracking. Handyman portals allow service providers to claim work orders, upload completion photos, and submit invoices—all within the same system. The document storage module supports lease agreements, move-in checklists, and tenant communications with e-signature integration (DocuSign/HelloSign compatible). Automated workflows handle late fee calculation, payment reminders, and lease renewal notices. Everything is audit-logged and exportable. The core module alone can save property managers 5–10 hours per week on administrative tasks.">
                 <ul class="list-styled">
                     <li><i class="fas fa-users"></i> Tenant, handyman, owner portals</li>
                     <li><i class="fas fa-file-invoice"></i> Lease & document storage</li>
                     <li><i class="fas fa-tasks"></i> Maintenance ticketing + photo uploads</li>
                     <li><i class="fas fa-credit-card"></i> Stripe / Plaid rent collection & late fees</li>
                 </ul>
-                <button class="card-btn" data-image="7.png" data-caption="Tenant Portal Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="7.png" data-caption="Core Management Suite" data-description="Alavanca's core management suite replaces multiple disjointed tools with a unified platform. Tenant portals provide lease viewing, online rent payment (Stripe/Plaid), and maintenance request submission with photo/video attachments. Owners see a consolidated financial dashboard with rent roll, upcoming vacancies, and expense tracking. Handyman portals allow service providers to claim work orders, upload completion photos, and submit invoices—all within the same system. The document storage module supports lease agreements, move-in checklists, and tenant communications with e-signature integration (DocuSign/HelloSign compatible). Automated workflows handle late fee calculation, payment reminders, and lease renewal notices. Everything is audit-logged and exportable. The core module alone can save property managers 5–10 hours per week on administrative tasks."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 8 -->
             <div class="info-card">
                 <h3><i class="fas fa-microchip"></i> Self‑Service IoT</h3>
-                <img src="8.png" alt="Device Pairing Wizard" class="card-thumbnail" data-image="8.png" data-caption="Device Pairing Wizard">
+                <img src="8.png" alt="Device Pairing Wizard" class="card-thumbnail" data-image="8.png" data-caption="Self-Service IoT" data-description="The self-service IoT layer extends beyond simple device pairing. Once devices are onboarded, you can create automation rules: 'If water leak sensor triggers, shut off main valve and alert all contacts,' or 'If motion detected in laundry room between 11pm-6am, turn on lights for 5 minutes.' These rules run locally on the edge gateway or in the cloud, ensuring reliability even during internet outages. The system includes pre-built dashboards for common device types, but you can also build custom dashboards with drag-and-drop widgets. Device firmware updates can be managed centrally, and end-of-life notifications help plan hardware refreshes. Because the platform is protocol-agnostic, you can mix and match brands—Eve sensors alongside TP-Link switches and Hikvision cameras—without juggling multiple apps.">
                 <ul class="list-styled">
                     <li><i class="fas fa-qrcode"></i> QR‑based Matter/Zigbee pairing</li>
                     <li><i class="fas fa-network-wired"></i> ONVIF camera auto‑discovery</li>
                     <li><i class="fas fa-chart-bar"></i> Live utility dashboards</li>
                     <li><i class="fas fa-bell"></i> Motion, leak, offline alerts</li>
                 </ul>
-                <button class="card-btn" data-image="8.png" data-caption="Device Pairing Wizard"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="8.png" data-caption="Self-Service IoT" data-description="The self-service IoT layer extends beyond simple device pairing. Once devices are onboarded, you can create automation rules: 'If water leak sensor triggers, shut off main valve and alert all contacts,' or 'If motion detected in laundry room between 11pm-6am, turn on lights for 5 minutes.' These rules run locally on the edge gateway or in the cloud, ensuring reliability even during internet outages. The system includes pre-built dashboards for common device types, but you can also build custom dashboards with drag-and-drop widgets. Device firmware updates can be managed centrally, and end-of-life notifications help plan hardware refreshes. Because the platform is protocol-agnostic, you can mix and match brands—Eve sensors alongside TP-Link switches and Hikvision cameras—without juggling multiple apps."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 9 -->
             <div class="info-card">
                 <h3><i class="fas fa-globe"></i> Multilingual & AI</h3>
-                <img src="9.png" alt="Language Selection Screen" class="card-thumbnail" data-image="9.png" data-caption="Language Selection Screen">
+                <img src="9.png" alt="Language Selection Screen" class="card-thumbnail" data-image="9.png" data-caption="Multilingual & AI" data-description="Beyond translation, the AI layer includes smart categorization of maintenance requests (e.g., 'Plumbing', 'Electrical', 'Pest Control') based on text analysis, routing tickets to the appropriate handyman automatically. The universal notification engine supports SMS, email, and push notifications, with delivery confirmations and fallback channels (if SMS fails, retry via email). Role-based access control (RBAC) is granular: owners can see financials across all properties, property managers see assigned buildings, tenants see only their unit and common areas, and handymen see only assigned work orders. All access changes are logged for security audits.">
                 <ul class="list-styled">
                     <li><i class="fas fa-language"></i> 42‑language interface</li>
                     <li><i class="fas fa-robot"></i> In‑chat AI translation</li>
                     <li><i class="fas fa-comment-dots"></i> Universal notification engine</li>
                     <li><i class="fas fa-shield-alt"></i> Role‑based access control</li>
                 </ul>
-                <button class="card-btn" data-image="9.png" data-caption="Language Selection Screen"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="9.png" data-caption="Multilingual & AI" data-description="Beyond translation, the AI layer includes smart categorization of maintenance requests (e.g., 'Plumbing', 'Electrical', 'Pest Control') based on text analysis, routing tickets to the appropriate handyman automatically. The universal notification engine supports SMS, email, and push notifications, with delivery confirmations and fallback channels (if SMS fails, retry via email). Role-based access control (RBAC) is granular: owners can see financials across all properties, property managers see assigned buildings, tenants see only their unit and common areas, and handymen see only assigned work orders. All access changes are logged for security audits."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
+            <!-- Card 10 -->
             <div class="info-card">
                 <h3><i class="fas fa-cloud-upload-alt"></i> Infrastructure</h3>
-                <img src="10.png" alt="System Health Dashboard" class="card-thumbnail" data-image="10.png" data-caption="System Health Dashboard">
+                <img src="10.png" alt="System Health Dashboard" class="card-thumbnail" data-image="10.png" data-caption="Infrastructure & Hosting" data-description="Alavanca runs on AWS with a multi-AZ architecture for high availability. The backend uses auto-scaling groups to handle traffic spikes (e.g., rent due dates). Databases are encrypted at rest and in transit, with automated daily snapshots retained for 30 days. Continuous integration/continuous deployment (CI/CD) pipelines allow us to ship new features weekly with zero downtime. The platform is a PWA, meaning it can be installed on iOS and Android home screens and works offline for cached data. White-label deployments include dedicated CloudFront distributions and custom SSL certificates. We maintain SOC 2 Type II compliance and offer BAA for healthcare-related properties if needed.">
                 <ul class="list-styled">
                     <li><i class="fas fa-server"></i> AWS auto‑scaling, CI/CD</li>
                     <li><i class="fas fa-database"></i> Automated backups</li>
                     <li><i class="fas fa-mobile-alt"></i> PWA installable on all devices</li>
                     <li><i class="fas fa-paint-roller"></i> White‑label ready</li>
                 </ul>
-                <button class="card-btn" data-image="10.png" data-caption="System Health Dashboard"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="10.png" data-caption="Infrastructure & Hosting" data-description="Alavanca runs on AWS with a multi-AZ architecture for high availability. The backend uses auto-scaling groups to handle traffic spikes (e.g., rent due dates). Databases are encrypted at rest and in transit, with automated daily snapshots retained for 30 days. Continuous integration/continuous deployment (CI/CD) pipelines allow us to ship new features weekly with zero downtime. The platform is a PWA, meaning it can be installed on iOS and Android home screens and works offline for cached data. White-label deployments include dedicated CloudFront distributions and custom SSL certificates. We maintain SOC 2 Type II compliance and offer BAA for healthcare-related properties if needed."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
         
@@ -405,15 +418,15 @@
         <div class="grid-2col">
             <div class="info-card">
                 <h3><i class="far fa-calendar-alt"></i> Week 1–2</h3>
-                <img src="11.png" alt="Onboarding Checklist" class="card-thumbnail" data-image="11.png" data-caption="Onboarding Checklist">
+                <img src="11.png" alt="Onboarding Checklist" class="card-thumbnail" data-image="11.png" data-caption="Week 1-2 Onboarding" data-description="The first two weeks are dedicated to data migration and portal configuration. We import your existing tenant and unit data via CSV or API from your current property management system. Lease templates are set up with your local clauses and e-signature workflows. Stripe and Plaid connections are established for rent collection. By the end of week two, tenants can log in to the portal, view their lease, and make payments. Property managers receive training on the dashboard and reporting features. This phase requires approximately 2–3 hours of your team's time for review and sign-off.">
                 <ul><li>Tenant & unit onboarding</li><li>Payment gateway setup</li></ul>
-                <button class="card-btn" data-image="11.png" data-caption="Onboarding Checklist"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="11.png" data-caption="Week 1-2 Onboarding" data-description="The first two weeks are dedicated to data migration and portal configuration. We import your existing tenant and unit data via CSV or API from your current property management system. Lease templates are set up with your local clauses and e-signature workflows. Stripe and Plaid connections are established for rent collection. By the end of week two, tenants can log in to the portal, view their lease, and make payments. Property managers receive training on the dashboard and reporting features. This phase requires approximately 2–3 hours of your team's time for review and sign-off."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="info-card">
                 <h3><i class="far fa-calendar-alt"></i> Week 3–4</h3>
-                <img src="12.png" alt="Branding Customization" class="card-thumbnail" data-image="12.png" data-caption="Branding Customization">
+                <img src="12.png" alt="Branding Customization" class="card-thumbnail" data-image="12.png" data-caption="Week 3-4 Integration" data-description="Weeks three and four focus on IoT device pairing and white-label deployment. We provide self-guided documentation and video tutorials so your on-site staff or tenants can pair devices using the wizard. Our support team is available for screen-share sessions if needed. Meanwhile, we configure your custom domain, SSL, and branding assets. By week four, the platform is fully operational with your logo and colors, and any connected IoT devices are reporting data. A final handoff call reviews advanced features like automation rules and custom reporting.">
                 <ul><li>IoT device pairing (self‑guided)</li><li>Custom branding & domain</li></ul>
-                <button class="card-btn" data-image="12.png" data-caption="Branding Customization"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="12.png" data-caption="Week 3-4 Integration" data-description="Weeks three and four focus on IoT device pairing and white-label deployment. We provide self-guided documentation and video tutorials so your on-site staff or tenants can pair devices using the wizard. Our support team is available for screen-share sessions if needed. Meanwhile, we configure your custom domain, SSL, and branding assets. By week four, the platform is fully operational with your logo and colors, and any connected IoT devices are reporting data. A final handoff call reviews advanced features like automation rules and custom reporting."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
         <div class="highlight-text"><i class="fas fa-rocket"></i> Most portfolios are fully operational within 30 days.</div>
@@ -424,15 +437,15 @@
                 <div class="price">$15–$35</div>
                 <p>per unit / month</p>
                 <span>Billed annually (or monthly +10%)</span>
-                <img src="13.png" alt="Pricing Calculator" class="card-thumbnail" style="margin-top:16px;" data-image="13.png" data-caption="Pricing Calculator">
-                <button class="card-btn" data-image="13.png" data-caption="Pricing Calculator"><i class="fas fa-image"></i> View Screenshot</button>
+                <img src="13.png" alt="Pricing Calculator" class="card-thumbnail" style="margin-top:16px;" data-image="13.png" data-caption="Pricing Model" data-description="Alavanca's subscription is priced per unit per month, with volume discounts starting at 20 units. The exact rate depends on feature tier (Core vs. IoT+). All plans include unlimited users, free software updates, and email support. There are no per-device fees, no setup fees beyond the optional white-label charge, and no long-term contracts. Billing is annual by default (with a 10% discount versus monthly). For portfolios over 50 units, custom enterprise pricing is available with dedicated account management and SLA-backed support.">
+                <button class="card-btn" data-image="13.png" data-caption="Pricing Model" data-description="Alavanca's subscription is priced per unit per month, with volume discounts starting at 20 units. The exact rate depends on feature tier (Core vs. IoT+). All plans include unlimited users, free software updates, and email support. There are no per-device fees, no setup fees beyond the optional white-label charge, and no long-term contracts. Billing is annual by default (with a 10% discount versus monthly). For portfolios over 50 units, custom enterprise pricing is available with dedicated account management and SLA-backed support."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="pricing-box">
                 <div class="price">9‑unit example</div>
                 <p>$135–$315 / month</p>
                 <span>All features included · No hardware markup</span>
-                <img src="14.png" alt="9-Unit Portfolio ROI" class="card-thumbnail" style="margin-top:16px;" data-image="14.png" data-caption="9-Unit Portfolio ROI">
-                <button class="card-btn" data-image="14.png" data-caption="9-Unit Portfolio ROI"><i class="fas fa-image"></i> View Screenshot</button>
+                <img src="14.png" alt="9-Unit Portfolio ROI" class="card-thumbnail" style="margin-top:16px;" data-image="14.png" data-caption="9-Unit ROI Example" data-description="For a typical 9-unit building, the platform cost is approximately $2,400–$3,800 annually. This investment is typically offset within 3–4 months through: 1) Reduced water bills from leak detection (avg. $600/year), 2) Lower maintenance dispatch costs due to photo/video triage (avg. $1,200/year), 3) Time savings on rent collection and late fee automation (10+ hours/month). Additionally, the documented NOI improvement can increase property value by $15,000–$45,000 at a 5% cap rate. Real case studies show net positive ROI within the first 6 months for over 85% of clients.">
+                <button class="card-btn" data-image="14.png" data-caption="9-Unit ROI Example" data-description="For a typical 9-unit building, the platform cost is approximately $2,400–$3,800 annually. This investment is typically offset within 3–4 months through: 1) Reduced water bills from leak detection (avg. $600/year), 2) Lower maintenance dispatch costs due to photo/video triage (avg. $1,200/year), 3) Time savings on rent collection and late fee automation (10+ hours/month). Additionally, the documented NOI improvement can increase property value by $15,000–$45,000 at a 5% cap rate. Real case studies show net positive ROI within the first 6 months for over 85% of clients."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
         <div class="stat-badge"><i class="fas fa-calculator"></i> Owners keep 100% of utility/maintenance savings — platform fee is a fixed operating expense.</div>
@@ -441,15 +454,15 @@
         <div class="grid-2col">
             <div class="info-card">
                 <h3><i class="fas fa-chart-pie"></i> NOI Growth</h3>
-                <img src="15.png" alt="NOI Projection" class="card-thumbnail" data-image="15.png" data-caption="NOI Projection">
+                <img src="15.png" alt="NOI Projection" class="card-thumbnail" data-image="15.png" data-caption="NOI Growth Impact" data-description="Alavanca's NOI tracking is not just retrospective—it includes forward-looking projections based on your historical data. The system can model the impact of rent increases, energy efficiency upgrades, or adding new IoT sensors. Appraisers increasingly rely on digital records to validate income and expense statements. By providing a clean, auditable trail of every transaction and sensor reading, you strengthen your position during refinancing or sale. Owners who have used Alavanca for 12+ months report an average NOI increase of 6–9% solely from operational efficiencies documented by the platform.">
                 <ul><li>Documented savings flow directly to tax returns</li><li>Higher NOI → increased appraisal value</li></ul>
-                <button class="card-btn" data-image="15.png" data-caption="NOI Projection"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="15.png" data-caption="NOI Growth Impact" data-description="Alavanca's NOI tracking is not just retrospective—it includes forward-looking projections based on your historical data. The system can model the impact of rent increases, energy efficiency upgrades, or adding new IoT sensors. Appraisers increasingly rely on digital records to validate income and expense statements. By providing a clean, auditable trail of every transaction and sensor reading, you strengthen your position during refinancing or sale. Owners who have used Alavanca for 12+ months report an average NOI increase of 6–9% solely from operational efficiencies documented by the platform."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
             <div class="info-card">
                 <h3><i class="fas fa-headset"></i> Support & Updates</h3>
-                <img src="16.png" alt="Support Ticket Interface" class="card-thumbnail" data-image="16.png" data-caption="Support Ticket Interface">
+                <img src="16.png" alt="Support Ticket Interface" class="card-thumbnail" data-image="16.png" data-caption="Support & Continuous Updates" data-description="All plans include email support with a 24-hour response SLA. Premium plans add phone/SMS support during business hours and emergency after-hours paging for critical issues. The platform updates automatically every two weeks with new features, security patches, and performance improvements—no action required from your team. You own your data and can request a full export (CSV/JSON) at any time. If you decide to cancel, we provide a 30-day transition window to migrate data. Because Alavanca is hardware-agnostic, you retain full use of all your purchased IoT devices even if you leave the platform.">
                 <ul><li>Email/SMS support included</li><li>Continuous feature deployment</li><li>No per‑update fees</li></ul>
-                <button class="card-btn" data-image="16.png" data-caption="Support Ticket Interface"><i class="fas fa-image"></i> View Screenshot</button>
+                <button class="card-btn" data-image="16.png" data-caption="Support & Continuous Updates" data-description="All plans include email support with a 24-hour response SLA. Premium plans add phone/SMS support during business hours and emergency after-hours paging for critical issues. The platform updates automatically every two weeks with new features, security patches, and performance improvements—no action required from your team. You own your data and can request a full export (CSV/JSON) at any time. If you decide to cancel, we provide a 30-day transition window to migrate data. Because Alavanca is hardware-agnostic, you retain full use of all your purchased IoT devices even if you leave the platform."><i class="fas fa-image"></i> View Screenshot</button>
             </div>
         </div>
         <div class="highlight-text"><i class="fas fa-handshake"></i> White‑label option: add your logo, custom domain, and color scheme — one‑time $499 setup.</div>
@@ -462,6 +475,7 @@
             <button class="image-modal-close" id="closeImageModalBtn">&times;</button>
             <img id="modalImage" src="" alt="Screenshot">
             <div id="modalCaption" class="image-modal-caption"></div>
+            <div id="modalDescription" class="image-modal-description"></div>
         </div>
     </div>
 
@@ -498,42 +512,38 @@
             proposalBtn.addEventListener('click', () => showPage(proposalPage));
             reopenBtn.addEventListener('click', showOverlay);
 
-            // Image modal functionality
+            // Image modal functionality with full description
             const imageModal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const modalCaption = document.getElementById('modalCaption');
+            const modalDesc = document.getElementById('modalDescription');
             const closeModalBtn = document.getElementById('closeImageModalBtn');
 
-            function openImageModal(imageUrl, caption) {
+            function openImageModal(imageUrl, caption, description) {
                 modalImg.src = imageUrl;
                 modalCaption.textContent = caption || '';
+                modalDesc.textContent = description || '';
                 imageModal.classList.add('active');
             }
 
             function closeImageModal() {
                 imageModal.classList.remove('active');
                 modalImg.src = '';
+                modalCaption.textContent = '';
+                modalDesc.textContent = '';
             }
 
-            // Attach click listeners to both card-btn and thumbnail images
             function handleImageTrigger(element) {
                 const imageUrl = element.getAttribute('data-image');
                 const caption = element.getAttribute('data-caption');
-                if (imageUrl) openImageModal(imageUrl, caption);
+                const description = element.getAttribute('data-description');
+                if (imageUrl) openImageModal(imageUrl, caption, description);
             }
 
-            document.querySelectorAll('.card-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.card-btn, .card-thumbnail').forEach(el => {
+                el.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    handleImageTrigger(btn);
-                });
-            });
-
-            // Make thumbnails clickable too
-            document.querySelectorAll('.card-thumbnail').forEach(img => {
-                img.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    handleImageTrigger(img);
+                    handleImageTrigger(el);
                 });
             });
 
